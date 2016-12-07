@@ -8,46 +8,12 @@
   <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js'></script>
 
   <script type="text/template" id='template-musicians'>
-    <li><a href="musicians.php?id=<%= id %>"><%= first_name %> <%= last_name %></a></li>
+    <a href="musicians.php?id=<%= id %>"><%= first_name %> <%= last_name %></a>
   </script>
 
   <script type="text/javascript" src="./ns/model/Musician.js" ></script>
   <script type="text/javascript" src="./ns/view/Musician.js" ></script>
-
-
-  <script type="text/javascript">
-    var ns = ns || {};
-
-    (function ($, ns, Backbone) {
-
-      $(function () {
-        var main = function () {
-          var musicians = new ns.models.MusiciansCollection();
-
-          var musiciansList = new ns.views.MusicianListView({
-            el: '#musicians-list',
-            collection: musicians
-          });
-
-          musicians.add(new ns.models.MusiciansModel({id:1, first_name:'Maurice', last_name:'Andre'}));
-          musicians.add(new ns.models.MusiciansModel({id:2, first_name:'Louis', last_name:'Amstrong'}));
-          musicians.add(new ns.models.MusiciansModel({id:3, first_name:'Eric', last_name:'Aubier'}));
-          musicians.add(new ns.models.MusiciansModel({id:4, first_name:'Miles', last_name:'Davis'}));
-          musicians.add(new ns.models.MusiciansModel({id:5, first_name:'Arturo', last_name:'Sandoval'}));
-          musicians.add(new ns.models.MusiciansModel({id:6, first_name:'James', last_name:'Morrison'}));
-
-          $('#waiting').remove();
-
-        };
-
-        $('body').append('<h1 id="waiting">Merci de Patienter un moment</h1>');
-
-        setTimeout(main, 2000);
-      })
-
-
-    })(jQuery, ns, Backbone)
-  </script>
+  <script type="text/javascript" src="./main.js" ></script>
 </head>
 <body>
 <ul id='musicians-list'></ul>
