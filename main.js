@@ -18,12 +18,12 @@ var ns = ns || {};
       });
 
       // Add new musician in list of musicians with adding a new instance of musicianModel
-      musicians.add(new ns.models.MusiciansModel({id:1, first_name:'Maurice', last_name:'Andre'}));
-      musicians.add(new ns.models.MusiciansModel({id:2, first_name:'Louis', last_name:'Amstrong'}));
-      musicians.add(new ns.models.MusiciansModel({id:3, first_name:'Eric', last_name:'Aubier'}));
+      musicians.add(new ns.models.MusiciansModel({id:1, first_name:'Maurice', last_name:'andre'}));
+      musicians.add(new ns.models.MusiciansModel({id:2, first_name:'Louis', last_name:'amstrong'}));
+      musicians.add(new ns.models.MusiciansModel({id:3, first_name:'Eric', last_name:'aubier'}));
       musicians.add(new ns.models.MusiciansModel({id:4, first_name:'Miles', last_name:'Davis'}));
-      musicians.add(new ns.models.MusiciansModel({id:5, first_name:'Arturo', last_name:'Sandoval'}));
-      musicians.add(new ns.models.MusiciansModel({id:6, first_name:'James', last_name:'Morrison'}));
+      musicians.add(new ns.models.MusiciansModel({id:5, first_name:'Arturo', last_name:'sandoval'}));
+      musicians.add(new ns.models.MusiciansModel({id:6, first_name:'James', last_name:'morrison'}));
     }
 
     $('body').append('<h1 id="waiting">Merci de Patienter un moment</h1>');

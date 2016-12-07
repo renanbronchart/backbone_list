@@ -3,11 +3,22 @@
 <head>
   <meta charset='utf-8' />
   <title>Big Musiciens</title>
+  <link rel="stylesheet" href="./style/styles.css">
   <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
   <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.2/lodash.min.js'></script>
   <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.3/backbone-min.js'></script>
 
   <script type="text/template" id='template-musicians'>
+    <div class="card">
+      <div class="card__image">
+        <img src="./img/<%= last_name %>.jpg" alt='trompettiste <%= id %>' class='img-responsive' />
+      </div>
+      <div class="card__description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua.</p>
+        <button class='card__button'>Change description</button>
+      </div>
+    </div>
     <a href="musicians.php?id=<%= id %>"><%= first_name %> <%= last_name %></a>
   </script>
 
