@@ -8,10 +8,36 @@ var ns = ns || {};
     model: null,
     // Save in this.template the template contain.
     template: _.template( $('#template-musicians').html() ),
+    events: {
+      'click .card__button': 'changeDescription',
+      'click .submit-description': 'submitDescription'
+    },
     initialize: function () {
       // listen when this.model change and run render.
       this.listenTo(this.model, 'change', this.render);
       this.render();
+    },
+    changeDescription: function (event) {
+      var elTarget = event.target;
+
+      $(elTarget).hide();
+      this.$el.find('.card__description').append(
+        '<form class="form-description"><textarea id="description" ></textarea><button type="submit" class="submit-description">Send</button></form>'
+      );
+
+      event.preventDefault();
+    },
+
+    submitDescription: function (event) {
+      var elTarget = event.target;
+      var newDescription = $('#description').val();
+
+      this.$el.find('.card__description p').empty().html(newDescription);
+
+      $('.form-description').remove();
+      this.$el.find('.card__button').show();
+
+      event.preventDefault();
     },
     render: function () {
       // Add in this view the template with good params.

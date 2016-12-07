@@ -1,12 +1,9 @@
-#musicians-list{
-
-}
-
 #musicians-list li{
   width: 20%;
   margin: 40px;
   min-width: 200px;
   display: inline-block;
+  vertical-align: middle;
 }
 
 .card{
