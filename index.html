@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Big Musiciens</title>
+  <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+</head>
+<body>
+<ul id='musicians-list'></ul>
+<script type="text/javascript">
+  (function ($) {
+    var musicians;
+
+    $(function () {
+      var main = function () {
+        musicians = [
+          { id:1, first_name:'Maurice', last_name:'Andre' },
+          { id:2, first_name:'Louis', last_name:'Amstrong' },
+          { id:3, first_name:'Eric', last_name:'Aubier' },
+          { id:4, first_name:'Miles', last_name:'Davis' },
+          { id:5, first_name:'Arturo', last_name:'Sandoval' },
+          { id:6, first_name:'James', last_name:'Morrison' }
+        ];
+
+        $('#waiting').remove();
+
+        var $musicians_list = $('#musicians-list');
+        var musician;
+        var i;
+
+        for (i = 0, l = musicians.length; i < l; i++) {
+          musician = musicians[i];
+
+          $musicians_list.append('<li><a href="musicians.php?id=' + musician.id + '">'  + musician.first_name + " " + musician.last_name + '</a></li>');
+        }
+
+      };
+
+      $('body').append('<h1 id="waiting">Merci de Patienter un moment</h1>');
+
+      setTimeout(main, 2000);
+    })
+
+
+  })(jQuery)
+</script>
+</body>
+</html>
